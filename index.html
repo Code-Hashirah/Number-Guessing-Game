@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="form" class="container-fluid row">
+        <p id="num" class="text-secondary h3"></p>
+        <button class="btn btn-outline-danger col-3" onclick="Guess('1')">1</button>
+        <button class="btn btn-outline-danger col-3" onclick="Guess('2')">2</button>
+        <button class="btn btn-outline-danger col-3" onclick="Guess('3')">3</button>
+        <button class="btn btn-outline-danger col-3" onclick="Guess('4')">4</button>
+        <button class="btn btn-outline-danger col-3" onclick="Guess('5')">5</button>
+        <button class="btn btn-outline-danger col-3" onclick="Guess('6')">6</button>
+        <button class="btn btn-outline-danger col-3" onclick="Guess('7')">7</button>
+        <button class="btn btn-outline-danger col-3" onclick="Guess('8')">8</button>
+        <button class="btn btn-outline-danger col-3" onclick="Guess('9')">9</button>
+        <button class="btn btn-outline-danger col-3" onclick="Guess('0')">0</button>
+        
+        
+    </div>
+    
+
+    <!-- ================================================================================================= -->
+    <script>
+        function Guess(num){
+            let result;
+             var number=Math.floor(Math.random()*10)
+            //  let=user_input;
+             if (num==number){
+                document.getElementById('num').innerHTML="You guessed right "+ number;
+             }
+             else{
+                document.getElementById('num').innerHTML="Sorry your guess was wrong the number is  "+number;
+             }
+        }
+       
+    </script>
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+</html>
