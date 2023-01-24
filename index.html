@@ -9,19 +9,25 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="form" class="container-fluid row">
-        <p id="num" class="text-secondary h3"></p>
-        <button class="btn btn-outline-danger col-6" onclick="Guess('1')">1</button>
-        <button class="btn btn-outline-danger col-6" onclick="Guess('2')">2</button>
-        <button class="btn btn-outline-danger col-6" onclick="Guess('3')">3</button>
-        <button class="btn btn-outline-danger col-6" onclick="Guess('4')">4</button>
-        <button class="btn btn-outline-danger col-6" onclick="Guess('5')">5</button>
-        <button class="btn btn-outline-danger col-6" onclick="Guess('6')">6</button>
-        <button class="btn btn-outline-danger col-6" onclick="Guess('7')">7</button>
-        <button class="btn btn-outline-danger col-6" onclick="Guess('8')">8</button>
-        <button class="btn btn-outline-danger col-6" onclick="Guess('9')">9</button>
-        <button class="btn btn-outline-danger col-6" onclick="Guess('0')">0</button>
-        
+    <div id="form" class="row text-bg-dark">
+        <p class="h3">Number Guessing Game</p>
+        <p>Guess a number and see if you can match mine</p>
+        <small class="text-secondary">Note! The number will change every time</small>
+        <label for="score">SCORE</label>
+        <p id="score">0</p>
+        <p id="num" class="text-secondary h4"></p>
+        <div class="row mb-5 container" id="keys-div">
+            <button class="btn btn-outline-danger col-5" onclick="Guess('1')">1</button>
+        <button class="btn btn-outline-danger col-5" onclick="Guess('2')">2</button>
+        <button class="btn btn-outline-danger col-5" onclick="Guess('3')">3</button>
+        <button class="btn btn-outline-danger col-5" onclick="Guess('4')">4</button>
+        <button class="btn btn-outline-danger col-5" onclick="Guess('5')">5</button>
+        <button class="btn btn-outline-danger col-5" onclick="Guess('6')">6</button>
+        <button class="btn btn-outline-danger col-5" onclick="Guess('7')">7</button>
+        <button class="btn btn-outline-danger col-5" onclick="Guess('8')">8</button>
+        <button class="btn btn-outline-danger col-5" onclick="Guess('9')">9</button>
+        <button class="btn btn-outline-danger col-5" onclick="Guess('0')">0</button>
+        </div>
         
     </div>
     
@@ -29,14 +35,23 @@
     <!-- ================================================================================================= -->
     <script>
         function Guess(num){
+            let adder=5;
+            let score;
             let result;
              var number=Math.floor(Math.random()*10)
             //  let=user_input;
              if (num==number){
-                document.getElementById('num').innerHTML="You guessed right "+ number;
+                // let score=0;
+                let score =parseInt(document.getElementById('score').innerHTML)
+                document.getElementById('num').innerHTML="Correct! You guessed right "+ number;
+                       
+                   
+                    document.getElementById('score').innerHTML=adder+score;
+                     console.log(score+adder);    
              }
+             
              else{
-                document.getElementById('num').innerHTML="Sorry your guess was wrong the number is  "+number;
+                document.getElementById('num').innerHTML="Sorry your guess was wrong my number is  "+number;
              }
         }
        // correct it
